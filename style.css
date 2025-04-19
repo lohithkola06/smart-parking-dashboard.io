@@ -1,0 +1,167 @@
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+.light-mode {
+  background: #ffffff;
+  color: #14213D;
+}
+
+.dark-mode {
+  background: #000000;
+  color: #E5E5E5;
+}
+
+#loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 2rem;
+  background: #000000;
+  color: #fca311;
+}
+
+.app {
+  display: flex;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  padding: 1rem;
+  background: #14213d;
+  color: white;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.app {
+  display: flex;
+  margin-left: 240px; /* add extra space from the sidebar */
+}
+
+main {
+  flex: 1;
+  padding: 2rem 2rem 2rem 0.5rem; /* reduce left padding, keep some space */
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  color: #fca311;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background: #fca311;
+  border: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background 0.2s;
+}
+
+.sidebar button:hover {
+  background: #e5940a;
+}
+
+.sidebar button:active {
+  background: #b36a00;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 2.5rem; /* Increased bottom margin for more space before tickets */
+}
+
+.tickets-header-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+}
+.tickets-header {
+  margin: 0;
+  flex: 1;
+}
+.download-btn {
+  background: #14213d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.download-btn:hover {
+  background: #1a2750;
+}
+.download-btn:active {
+  background: #0d1427;
+}
+
+.card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  color: inherit;
+}
+
+.stats-flex-row {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.small-card {
+  width: 375px;
+  min-width: 375px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-mode .card {
+  color: #111;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 1px solid #ddd;
+  cursor: default;
+}
+
+.filters {
+  margin-top: 1rem;
+}

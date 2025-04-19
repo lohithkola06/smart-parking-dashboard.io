@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Parking Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+</head>
+<body class="light-mode">
+  <div id="loader">Loading Dashboard...</div>
+
+  <div class="app" style="display: none;">
+    <aside class="sidebar">
+      <h2>🚗 Dashboard</h2>
+      <button onclick="showView('data')">Data</button>
+      <button onclick="showView('stats')">Statistics</button>
+      <button onclick="toggleTheme()">Toggle Theme</button>
+    </aside>
+
+    <main>
+      <section id="dataView">
+        <h1>🅿️ Parking Slot Status</h1>
+        <div class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>Slot</th>
+                <th>Status</th>
+                <th>Last Updated</th>
+              </tr>
+            </thead>
+            <tbody id="slotTableBody"></tbody>
+          </table>
+        </div>
+
+        <div class="tickets-header-row">
+  <h1 class="tickets-header">📄 Tickets</h1>
+  <button class="download-btn" onclick="downloadTicketsCSV()">Download Data</button>
+</div>
+        <div class="filters">
+          <label for="filterPaid">Filter Paid:</label>
+          <select id="filterPaid" onchange="loadDashboard()">
+            <option value="">All</option>
+            <option value="yes">Paid</option>
+            <option value="no">Unpaid</option>
+          </select>
+        </div>
+        <div class="card">
+          <table>
+            <thead>
+              <tr>
+                <th onclick="sortTickets('slot')">Slot ⬍</th>
+                <th onclick="sortTickets('entry_time')">Entry Time ⬍</th>
+                <th>Exit Time</th>
+                <th onclick="sortTickets('duration')">Duration (hours) ⬍</th>
+                <th>Paid</th>
+              </tr>
+            </thead>
+            <tbody id="ticketTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="statsView" style="display: none;">
+        <h1>📊 Ticket Stats</h1>
+        <div class="stats-flex-row">
+          <div class="card small-card">
+            <canvas id="paidChart" width="180" height="180"></canvas>
+          </div>
+          <div class="card">
+            <h2>Ticket Duration vs Entry Time (Scatterplot)</h2>
+            <canvas id="scatterChart" height="180"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Tickets per Slot (Bar Chart)</h2>
+          <canvas id="barChart" height="120"></canvas>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
