@@ -1,7 +1,7 @@
 
 const slotTableBody = document.getElementById('slotTableBody');
 const ticketTableBody = document.getElementById('ticketTableBody');
-const baseURL = 'http://192.168.1.106:3000';
+const baseURL = 'https://192.168.1.106:3000';
 let ticketData = [];
 let sortKey = null;
 let sortDirection = { slot: 'asc', duration: 'desc', entry_time: 'desc' }; // default directions
