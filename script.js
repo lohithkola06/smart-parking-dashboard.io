@@ -1,7 +1,7 @@
 
 const slotTableBody = document.getElementById('slotTableBody');
 const ticketTableBody = document.getElementById('ticketTableBody');
-const baseURL = 'https://192.168.1.106:3000';
+const baseURL = 'https://smart-parking-backend-tbs9.onrender.com';
 let ticketData = [];
 let sortKey = null;
 let sortDirection = { slot: 'asc', duration: 'desc', entry_time: 'desc' }; // default directions
