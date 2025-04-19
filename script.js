@@ -33,9 +33,15 @@ function sortTickets(key) {
   loadDashboard();
 }
 
+let paidChartInstance = null;
+
 function drawChart(data) {
   const ctx = document.getElementById('paidChart').getContext('2d');
-  new Chart(ctx, {
+  // Destroy previous chart instance if it exists
+  if (paidChartInstance) {
+    paidChartInstance.destroy();
+  }
+  paidChartInstance = new Chart(ctx, {
     type: 'doughnut',
     data: {
       labels: ['Paid', 'Unpaid'],
