@@ -195,6 +195,12 @@ async function loadDashboard() {
 
 setTimeout(loadDashboard, 1000);
 
+// Automatically refresh dashboard data every 5 seconds
+const POLLING_INTERVAL = 5000;
+setInterval(() => {
+  loadDashboard();
+}, POLLING_INTERVAL);
+
 function downloadTicketsCSV() {
   if (!ticketData.length) {
     alert('No ticket data to download.');
